@@ -13,6 +13,11 @@ jobs:
       - checkout
       - android/restore-gradle-cache
       - android/restore-build-cache
+      - run:
+          name: log in background
+          command: |
+            adb logcat *:I -f logcat.txt
+          background: true
       - android/run-tests:
           test-command: ./gradlew testDebug
       - android/save-gradle-cache
@@ -23,6 +28,8 @@ jobs:
               mkdir -p ~/test-results/junit/
               find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
           when: always
+      - store_artifacts:
+          path: ~/project/logcat.txt
       - store_test_results:
           path: ~/test-results
       - store_artifacts:
