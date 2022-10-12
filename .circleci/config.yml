@@ -6,9 +6,9 @@ orbs:
 
 jobs:
   unit-test:
-    executor:
-      name: android/android-machine
-      resource-class: xlarge
+    machine:
+      image: android:2022.09.1
+    resource_class: large
     steps:
       - checkout
       - android/restore-gradle-cache
