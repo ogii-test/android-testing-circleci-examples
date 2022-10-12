@@ -16,7 +16,7 @@ jobs:
       - run:
           name: log in background
           command: |
-          　touch logcat.txt
+            touch logcat.txt
             adb logcat -f logcat.txt *:I
           background: true
       - android/run-tests:
