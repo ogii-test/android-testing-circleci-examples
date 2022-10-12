@@ -16,7 +16,8 @@ jobs:
       - run:
           name: log in background
           command: |
-            adb logcat *:I -f logcat.txt
+          　touch logcat.txt
+            adb logcat -f logcat.txt *:I
           background: true
       - android/run-tests:
           test-command: ./gradlew testDebug
