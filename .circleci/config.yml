@@ -70,7 +70,7 @@ jobs:
       - checkout
       - android/start-emulator-and-run-tests:
           test-command: adb shell am instrument -w -m -e androidx.benchmark.suppressErrors EMULATOR -e debug false -e androidx.benchmark.output.enable true com.circleci.samples.todoapp.macrobenchmark/androidx.test.runner.AndroidJUnitRunner
-          system-image: system-images;android-33;google_apis;x86
+          system-image: system-images;android-33;google_apis;x86_64
           post-emulator-launch-assemble-command: ./gradlew app:assembleRelease macrobenchmark:assemble
           post-emulator-wait-steps:
             - run: ./gradlew app:installRelease macrobenchmark:installRelease
