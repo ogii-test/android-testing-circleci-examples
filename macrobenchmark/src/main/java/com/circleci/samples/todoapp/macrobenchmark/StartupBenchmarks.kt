@@ -23,7 +23,7 @@ fun MacrobenchmarkRule.measureStartup(
     packageName = TARGET_PACKAGE,
     metrics = listOf(StartupTimingMetric()),
     compilationMode = if (profileCompiled) {
-        CompilationMode.SpeedProfile(warmupIterations = 3)
+        CompilationMode.None
     } else {
         CompilationMode.None
     },
