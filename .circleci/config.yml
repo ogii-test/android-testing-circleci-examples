@@ -75,6 +75,7 @@ jobs:
           post-emulator-wait-steps:
             - run: ./gradlew app:installRelease macrobenchmark:installRelease
           kill-emulators: false
+          additional-emulator-args: "-partition-size 1024"
       - run:
           name: Pull benchmark data from emulator
           command: |
@@ -141,5 +142,4 @@ workflows:
   test-and-build:
     jobs:
       - unit-test
-      - benchmarks-emulator:
-          additional-emulator-args: "-partition-size 1024"
+      - benchmarks-emulator
