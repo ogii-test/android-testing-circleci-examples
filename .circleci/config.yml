@@ -64,7 +64,7 @@ jobs:
     executor:
       name: android/android-machine
       resource-class: xlarge
-      image-name: "android:2022.09.1
+      image-name: android:2022.09.1
 
     steps:
       - checkout
