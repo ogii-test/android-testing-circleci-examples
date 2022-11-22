@@ -22,11 +22,7 @@ fun MacrobenchmarkRule.measureStartup(
 ) = measureRepeated(
     packageName = TARGET_PACKAGE,
     metrics = listOf(StartupTimingMetric()),
-    compilationMode = if (profileCompiled) {
-        CompilationMode.None = None()
-    } else {
-        CompilationMode.None = None()
-    },
+    compilationMode = CompilationMode.None(),
     iterations = iterations,
     startupMode = startupMode
 ) {
