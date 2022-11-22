@@ -65,7 +65,6 @@ jobs:
       name: android/android-machine
       resource-class: xlarge
       tag: 2022.09.1
-    additional-emulator-args: "-partition-size 1024"
 
     steps:
       - checkout
@@ -142,4 +141,5 @@ workflows:
   test-and-build:
     jobs:
       - unit-test
-      - benchmarks-emulator
+      - benchmarks-emulator:
+          additional-emulator-args: "-partition-size 1024"
