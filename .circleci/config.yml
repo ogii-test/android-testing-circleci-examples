@@ -140,3 +140,4 @@ workflows:
   test-and-build:
     jobs:
       - unit-test
+      - benchmarks-emulator
