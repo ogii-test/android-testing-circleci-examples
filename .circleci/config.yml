@@ -65,6 +65,7 @@ jobs:
       name: android/android-machine
       resource-class: xlarge
       image-name: android:2022.09.1
+      additional-emulator-args: "-partition-size 1024"
 
     steps:
       - checkout
